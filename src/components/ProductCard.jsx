@@ -15,10 +15,10 @@ function ProductCard({ product, onAdd }) {
         <button
           className="btn two"
           disabled={!product.inStock}
-          onClick={() => onAdd(product, 
+          onClick={() => onAdd(product, 2
           )}
         >
-          +1
+          +2
         </button>
       </div>
     </div>
