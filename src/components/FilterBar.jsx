@@ -1,18 +1,17 @@
-import { useState } from "react";
 import { categories } from "../data.js";
 
-function FilterBar() {
-  const [value, setValue] = useState("all");
-  const options = ["all", ...categories];
+function FilterBar({ selected, onSelect }) {
+  const options = ["ທັງໝົດ", ...categories];
+  
   return (
     <div className="filter-row">
       {options.map((c) => (
         <button
           key={c}
-          className={"filter-btn" + (value === c ? " active" : "")}
-          onClick={() => setValue(c)}
+          className={"filter-btn" + (selected === c ? " active" : "")}
+          onClick={() => onSelect(c)}
         >
-          {c === "all" ? "ທັງໝົດ" : c}
+          {c}
         </button>
       ))}
     </div>
